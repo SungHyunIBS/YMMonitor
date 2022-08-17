@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="content has-text-centered">
+  <h2>Webcams</h2>
+  <p>Reloaded at: <span id="datetime"></span></p>
+  <figure>
+    <p>
+      <img src="/webcam1/webcam.png" alt="webcam" id="webcam">
+    </p>
+  </figure>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (function() {
+      var imageElem = document.getElementById('webcam');
+      var dateElem  = document.getElementById('datetime');
+      dateElem.innerHTML = new Date();
+      setInterval(function() {
+          t = new Date();
+	  imageElem.src = '/webcam1/webcam.png?t=' + t.getTime();
+          dateElem.innerHTML = t;
+      }, 60000);
+  })();
+</script>
+{% endblock %}

@@ -1,0 +1,10 @@
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+GF_SERVER_DOMAIN=grafana.monitor.yemilab.kr
+GF_SERVER_ROOT_URL=https://grafana.monitor.yemilab.kr
+GF_DATABASE_TYPE=postgres
+GF_DATABASE_HOST=postgres
+GF_DATABASE_NAME=postgres
+GF_DATABASE_USER=postgres
+GF_DATABASE_PASSWORD=postgres

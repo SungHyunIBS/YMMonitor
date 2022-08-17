@@ -1,0 +1,5 @@
+Host webcam1
+     HostName localhost
+     Port 12345
+     IdentityFile ~/.ssh/cup_desk_id_rsa
+     User webcam1

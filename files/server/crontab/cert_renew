@@ -1,0 +1,4 @@
+#!/bin/bash
+
+date >> /var/log/nginx/renew.log
+/usr/bin/certbot renew --post-hook "systemctl restart nginx" >> /var/log/nginx/renew.log

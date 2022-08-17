@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086" # HTTP service port
+      - "8088:8088" # RPC service port
+    env_file:
+      - '.env'
+    volumes:
+      - ./influxdb-data:/var/lib/influxdb
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    env_file:
+      - '.env'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - '.env'
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+    depends_on:
+      - influxdb
+      - postgres
+    restart: always

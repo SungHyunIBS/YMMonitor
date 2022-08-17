@@ -1,0 +1,9 @@
+server {
+	server_name influxdb.monitor.yemilab.kr;
+	root /monitor/www/html;
+	index index.html;
+
+	location / {
+		proxy_pass http://localhost:8086/;
+	}
+}
